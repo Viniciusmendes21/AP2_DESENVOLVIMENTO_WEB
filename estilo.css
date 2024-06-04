@@ -11,6 +11,17 @@
   }
 }
 
+button {
+  background-color: black;
+  color: white;
+  font-family: 'Neuton', serif;
+
+}
+
+#texto-logar {
+  font-family: 'Alumni Sans Inline One', sans-serif;
+}
+
 p,a {
   font-family: 'Neuton', serif;
 }
@@ -18,4 +29,10 @@ p,a {
 h1,h2,h3,h4,h5,h6{
   font-family: 'Alumni Sans Inline One', sans-serif;
   font-weight: normal;
+}
+
+@media only screen and (max-width: 768px) {
+  .pagina-login {
+    
+  }
 }

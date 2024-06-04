@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Inline+One&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Neuton:ital,wght@0,200;0,300;0,400;0,700;0,800;1,400&display=swap');
+
+@keyframes blink {
+  0%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
+}
+
+button {
+  background-color: black;
+  color: white;
+  font-family: 'Neuton', serif;
+
+}
+
+#texto-logar {
+  font-family: 'Alumni Sans Inline One', sans-serif;
+}
+
+p,a {
+  font-family: 'Neuton', serif;
+}
+
+h1,h2,h3,h4,h5,h6{
+  font-family: 'Alumni Sans Inline One', sans-serif;
+  font-weight: normal;
+}
+
+@media only screen and (max-width: 576px) {
+  #grid-container {
+      grid-template-columns: auto;
+      grid-template-rows: repeat(5, 5rem);
+  }
+  #grid-container > div:nth-child(odd) {
+      display: none;
+  }
+
+  #grid-container > div:nth-child(even) {
+      display: flex;
+  }
+}
