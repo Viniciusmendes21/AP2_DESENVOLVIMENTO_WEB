@@ -101,7 +101,7 @@ const montaCard = (entrada) => {
     divSpan.style.display = 'flex';
     divSpan.style.alignItems = 'center';
     divSpan.style.justifyContent = 'center';
-    divSpan.style.height = '3rem'; // Define a altura do contêiner do botão
+    divSpan.style.height = '3rem';
 
     const spanSaibaMais = document.createElement('span');
     spanSaibaMais.innerHTML = 'Saiba mais';
@@ -132,7 +132,7 @@ inputPesquisa.onkeyup = (ev) => {
             return noNome;
         });
 
-        container.innerHTML = ''; // Limpa o container antes de adicionar novos cards
+        container.innerHTML = '';
 
         filtrado.forEach((atleta) => {
             container.appendChild(montaCard(atleta));
@@ -166,9 +166,8 @@ btn_masculino.onclick = () => {
 btn_feminino.onclick = () => {
     banco = "https://botafogo-atletas.mange.li/2024-1/feminino"
     pegaDados(banco).then(dados => {
-        // Atualiza a variável global 'dados' e monta os cards
         window.dados = dados;
-        container.innerHTML = ''; // Limpa o container antes de adicionar novos cards
+        container.innerHTML = '';
         dados.forEach(atleta => {
             container.appendChild(montaCard(atleta));
         });
