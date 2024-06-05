@@ -8,12 +8,12 @@ document.getElementById('btn-logar').onclick = () => {
     
     if (hex_sha256(entrada) == alvo) {
         console.log('logado')
-        sessionStorage.setItem("estado", "logado");
+        localStorage.setItem("estado", "logado");
         window.location.href = "outra.html";
 
     } else {
         console.log('não logado')
-        sessionStorage.setItem("estado", "deslogado");
+        localStorage.setItem("estado", "deslogado");
         alert("Senha inválida");
     }
 }
