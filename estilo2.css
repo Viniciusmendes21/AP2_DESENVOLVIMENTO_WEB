@@ -44,6 +44,11 @@ button {
     flex-direction: row;
 }
 
+#texto-sair button:hover{
+    background-color: white;
+    font-weight: bold;
+}
+
 #texto {
   margin: 0px;
   flex-grow: 1;
