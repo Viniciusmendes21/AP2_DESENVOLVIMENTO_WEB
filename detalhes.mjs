@@ -26,7 +26,6 @@ const montaCard = (entrada) => {
     margin: .5rem;
     text-align: center;
     box-sizing: border-box;
-    cursor: pointer; /* Mãozinha ao passar o mouse */
     `;
 
     const divImagem = document.createElement('div');
