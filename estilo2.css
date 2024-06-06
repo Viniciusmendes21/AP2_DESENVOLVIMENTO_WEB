@@ -30,7 +30,7 @@ button {
 }
 
 #texto-sair{
-    background-color: darkgrey;
+    background-color: #FFD700;
     padding: 0.5em 1em;
     position: relative;
     display: flex;
