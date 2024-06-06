@@ -54,19 +54,18 @@ const montaCard = (entrada) => {
     card.style.cssText = `
     width: 15rem;
     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto 1fr auto;
     grid-template-areas:
     "image"
     "span"
     "name";
-    border: 1px solid black;
     background-color: #FFD700;
     padding: .5rem;
     margin: .5rem;
     text-align: center;
     box-sizing: border-box;
-    cursor: pointer; /* Mãozinha ao passar o mouse */
+    cursor: pointer;
+    max-width: 1200px;
+    
     `;
     card.dataset.id = entrada.id;
     card.dataset.urlDetalhes = entrada.url_detalhes;

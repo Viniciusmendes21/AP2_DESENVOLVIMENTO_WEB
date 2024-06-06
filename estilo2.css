@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Inline+One&display=swap');
-
 @import url('https://fonts.googleapis.com/css2?family=Neuton:ital,wght@0,200;0,300;0,400;0,700;0,800;1,400&display=swap');
 
 @keyframes blink {
@@ -20,7 +19,6 @@ button {
   max-width: 6em;
   padding: 0.5em 1em;
   text-align: center;
-
 }
 
 #elencos {
@@ -29,7 +27,6 @@ button {
     justify-content: center;
     gap: 2em;
     margin: 2em 0px;
-
 }
 
 #texto-sair{
@@ -72,14 +69,38 @@ h1,h2,h3,h4,h5,h6{
   font-weight: normal;
 }
 
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
 @media (max-width: 768px) {
-  #elencos {
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    #elencos {
       display: none;
   }
 
   #opçoes {
       display: block;
   }
+}
+
+@media (max-width: 1024px) {
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1025px) {
+    .container {
+        grid-template-columns: repeat(4, 1fr);
+    }
 }
 
 
