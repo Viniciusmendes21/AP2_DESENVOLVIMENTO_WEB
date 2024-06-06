@@ -17,6 +17,13 @@ button {
   text-align: center;
 }
 
+#texto-senha {
+  text-align: center;
+  padding: 0.5em 1em;
+  font-family: 'Neuton', serif;
+  font-weight: bold;
+}
+
 #texto-logar {
   font-family: 'Alumni Sans Inline One', sans-serif;
 }
