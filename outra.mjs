@@ -1,5 +1,6 @@
+
 document.addEventListener('DOMContentLoaded', () => {
-    const estado = localStorage.getItem('estado');
+    const estado = sessionStorage.getItem('estado');
     
     if (estado !== 'logado') {
         alert('Você não está logado!');
@@ -26,28 +27,22 @@ container.style.gap = '1rem';
 document.body.appendChild(container);
 
 const handleClick = (evento) => {
-    const id = evento.target.closest('article').dataset.id;
+    const dados = evento.target.closest('article').dataset;
+    const id = dados.id;
     const params = new URLSearchParams();
 
-    if (id) {
-        document.cookie = `id=${id}`;
-        params.append('id', id);
-        localStorage.setItem('id', id);
-        localStorage.setItem('atleta', JSON.stringify({ id }));
+    for (const propriedade in dados) {
+        document.cookie = `${propriedade}=${dados[propriedade]}`;
+        params.append(propriedade, dados[propriedade]);
+        sessionStorage.setItem(propriedade, dados[propriedade]);
     }
 
+    sessionStorage.setItem('atleta', JSON.stringify(dados));
+
     const queryString = params.toString();
-    const novaURL = `detalhes.html?${queryString}`;
+    const novaURL = `detalhes.html?$id=${id}`;
 
     window.location.href = novaURL;
-}
-
-const achaCookie = (chave) => {
-    const arrayCookies = document.cookie.split("; ");
-    const procurado = arrayCookies.find(
-        (e) => e.startsWith(`${chave}=`)
-    )
-    return procurado?.split("=")[1];
 }
 
 const montaCard = (entrada) => {
@@ -70,6 +65,18 @@ const montaCard = (entrada) => {
     cursor: pointer; /* Mãozinha ao passar o mouse */
     `;
     card.dataset.id = entrada.id;
+    card.dataset.urlDetalhes = entrada.url_detalhes;
+    card.dataset.elenco = entrada.elenco;
+    card.dataset.imagem = entrada.imagem;
+    card.dataset.nJogos = entrada.n_jogos;
+    card.dataset.nome = entrada.nome;
+    card.dataset.posicao = entrada.posicao;
+    card.dataset.naturalidade = entrada.naturalidade;
+    card.dataset.nascimento = entrada.nascimento;
+    card.dataset.altura = entrada.altura;
+    card.dataset.desde = entrada.no_botafogo_desde;
+    card.dataset.detalhes = entrada.detalhes;
+
     card.onclick = handleClick;
 
     const divImagem = document.createElement('div');
@@ -80,7 +87,7 @@ const montaCard = (entrada) => {
 
     const imagem = document.createElement('img');
     imagem.src = entrada.imagem;
-    imagem.alt = `Foto de ${entrada.nome}`;
+    imagem.alt = `Foto de ${entrada.imagem}`;
     imagem.style.width = '100%';
     imagem.style.height = 'auto';
     imagem.style.objectFit = 'cover';
@@ -147,7 +154,7 @@ const pegaDados = async (caminho) => {
 }
 
 btn_deslogar.onclick = () => {
-    localStorage.clear();
+    sessionStorage.clear();
     window.location.href = 'index.html';
 }
 
