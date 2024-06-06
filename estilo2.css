@@ -15,11 +15,52 @@ button {
   background-color: black;
   color: white;
   font-family: 'Neuton', serif;
+  cursor: pointer;
+  font-size: 1.3em;
+  max-width: 6em;
+  padding: 0.5em 1em;
+  text-align: center;
 
 }
 
-#texto-logar {
-  font-family: 'Alumni Sans Inline One', sans-serif;
+#elencos {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2em;
+    margin: 2em 0px;
+
+}
+
+#texto-sair{
+    background-color: darkgrey;
+    padding: 0.5em 1em;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+
+#texto {
+  margin: 0px;
+  flex-grow: 1;
+}
+
+#btn-sair {
+  text-align: center;
+  text-decoration: none;
+  padding: 0.5em 1em;
+}
+
+#opçoes {
+  display: none;
+  background-color: black;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  padding: 1em 1.5em;
+  margin: 1em auto 0.5em;
+  font-size: larger;
 }
 
 p,a {
@@ -29,6 +70,16 @@ p,a {
 h1,h2,h3,h4,h5,h6{
   font-family: 'Alumni Sans Inline One', sans-serif;
   font-weight: normal;
+}
+
+@media (max-width: 768px) {
+  #elencos {
+      display: none;
+  }
+
+  #opçoes {
+      display: block;
+  }
 }
 
 

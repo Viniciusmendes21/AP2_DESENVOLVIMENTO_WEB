@@ -14,6 +14,10 @@ divPesquisa.style.textAlign = 'center';
 const inputPesquisa = document.createElement('input');
 inputPesquisa.type = 'text';
 inputPesquisa.placeholder = 'BUSQUE POR NOME';
+inputPesquisa.style.textAlign = 'center';
+inputPesquisa.style.lineHeight = '3em';
+inputPesquisa.style.maxWidth = '80%';
+inputPesquisa.style.width = '30em';
 
 divPesquisa.appendChild(inputPesquisa);
 document.body.appendChild(divPesquisa);
@@ -40,7 +44,7 @@ const handleClick = (evento) => {
     sessionStorage.setItem('atleta', JSON.stringify(dados));
 
     const queryString = params.toString();
-    const novaURL = `detalhes.html?$id=${id}`;
+    const novaURL = `detalhes.html?id=${id}`;
 
     window.location.href = novaURL;
 }
@@ -62,7 +66,7 @@ const montaCard = (entrada) => {
     margin: .5rem;
     text-align: center;
     box-sizing: border-box;
-    cursor: pointer;
+    cursor: pointer; /* Mãozinha ao passar o mouse */
     `;
     card.dataset.id = entrada.id;
     card.dataset.urlDetalhes = entrada.url_detalhes;
@@ -190,3 +194,23 @@ btn_elenco_completo.onclick = () => {
         });
     });
 }
+
+const selectElenco = document.getElementById('opçoes');
+
+selectElenco.onchange = (evento) => {
+    const valorSelecionado = evento.target.value;
+
+    switch (valorSelecionado) {
+        case 'masculino':
+            btn_masculino.click();
+            break;
+        case 'feminino':
+            btn_feminino.click();
+            break;
+        case 'completo':
+            btn_elenco_completo.click();
+            break;
+        default:
+            console.log('Opção inválida');
+    }
+};

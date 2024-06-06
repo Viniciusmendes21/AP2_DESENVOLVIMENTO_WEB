@@ -9,7 +9,8 @@
     <script type="module" src="outra.mjs"></script>
 </head>
 <body>
-    <div id="texto-sair">Atletas Botafogo 2024-1
+    <div id="texto-sair">
+        <h1 id="texto">Atletas Botafogo 2024-1</h1>
         <button id="btn_deslogar">Sair</button>
     </div>
     <div id="elencos">
@@ -17,5 +18,11 @@
         <button id="btn_feminino">Feminino</button>
         <button id="btn_elenco_completo">Elenco Completo</button>
     </div>
+    <select id="opçoes">
+        <option value disabled>Escolha o Elenco</option>
+        <option value="masculino">Masculino</option>
+        <option value="feminino">Feminino</option>
+        <option value="completo">Elenco Completo</option>
+    </select>
 </body>
 </html>
