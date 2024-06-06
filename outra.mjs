@@ -18,6 +18,8 @@ inputPesquisa.style.textAlign = 'center';
 inputPesquisa.style.lineHeight = '3em';
 inputPesquisa.style.maxWidth = '80%';
 inputPesquisa.style.width = '30em';
+inputPesquisa.style.borderRadius = '0.5rem';
+inputPesquisa.style.border = 'none';
 
 divPesquisa.appendChild(inputPesquisa);
 document.body.appendChild(divPesquisa);
@@ -63,6 +65,7 @@ const montaCard = (entrada) => {
     box-sizing: border-box;
     cursor: pointer;
     max-width: 1200px;
+    border-radius:0.5rem;
 
     `;
     card.dataset.id = entrada.id;

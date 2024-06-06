@@ -7,14 +7,25 @@
   }
 }
 
+body {
+  background-color: darkgray;
+}
+
+#senha {
+  border-radius:0.5rem;
+  border: none;
+}
+
 button {
-  background-color: black;
-  color: white;
+  background-color: #FFD700;
+  color: black;
   font-family: 'Neuton', serif;
   cursor: pointer;
   padding: 0.5em 1em;
   font-size: 1.3em;
   text-align: center;
+  border-radius:0.5rem;
+  border: none;
 }
 
 #texto-senha {
@@ -26,6 +37,7 @@ button {
 
 #texto-logar {
   font-family: 'Alumni Sans Inline One', sans-serif;
+  font-weight: bold;
 }
 
 p,a {
