@@ -23,9 +23,7 @@ divPesquisa.appendChild(inputPesquisa);
 document.body.appendChild(divPesquisa);
 
 const container = document.createElement('div');
-container.style.display = 'flex';
-container.style.flexWrap = 'wrap';
-container.style.justifyContent = 'center';
+container.className ='container';
 container.style.gap = '1rem';
 
 document.body.appendChild(container);
@@ -65,7 +63,7 @@ const montaCard = (entrada) => {
     box-sizing: border-box;
     cursor: pointer;
     max-width: 1200px;
-    
+
     `;
     card.dataset.id = entrada.id;
     card.dataset.urlDetalhes = entrada.url_detalhes;
