@@ -26,6 +26,13 @@ button {
   text-align: center;
   border-radius:0.5rem;
   border: none;
+  
+}
+
+button:hover {
+  background-color: black;
+  color: white;
+  font-weight: bold;
 }
 
 #elencos {

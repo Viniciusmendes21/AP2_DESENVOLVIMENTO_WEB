@@ -28,6 +28,12 @@ button {
   border: none;
 }
 
+button:hover {
+  background-color: black;
+  color: white;
+  font-weight: bold;
+}
+
 #texto-senha {
   text-align: center;
   padding: 0.5em 1em;
