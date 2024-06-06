@@ -42,6 +42,8 @@ button {
     position: relative;
     display: flex;
     flex-direction: row;
+    border-radius: 0.5rem;
+
 }
 
 #texto-sair button:hover{
@@ -52,6 +54,7 @@ button {
 #texto {
   margin: 0px;
   flex-grow: 1;
+  
 }
 
 #btn-sair {
