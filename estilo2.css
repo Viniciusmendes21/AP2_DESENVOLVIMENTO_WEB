@@ -114,16 +114,5 @@ h1,h2,h3,h4,h5,h6{
   }
 }
 
-@media only screen and (max-width: 1024px) {
-    .container {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media only screen and (min-width: 1025px) {
-    .container {
-        grid-template-columns: repeat(4, 1fr);
-    }
-}
 
 
