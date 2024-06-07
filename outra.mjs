@@ -1,7 +1,6 @@
-
 document.addEventListener('DOMContentLoaded', () => {
     const estado = sessionStorage.getItem('estado');
-    
+
     if (estado !== 'logado') {
         alert('Você não está logado!');
         window.location.href = 'index.html';
@@ -66,8 +65,9 @@ const montaCard = (entrada) => {
     cursor: pointer;
     max-width: 1200px;
     border-radius:0.5rem;
-
     `;
+
+    // Adicionando dataset aos cards
     card.dataset.id = entrada.id;
     card.dataset.urlDetalhes = entrada.url_detalhes;
     card.dataset.elenco = entrada.elenco;
@@ -214,3 +214,41 @@ selectElenco.onchange = (evento) => {
             console.log('Opção inválida');
     }
 };
+
+// CSS para diferentes tamanhos de tela usando @media
+const style = document.createElement('style');
+style.textContent = `
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    box-sizing: border-box;
+}
+
+/* Estilos para telas menores que 768px */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: repeat(1, 1fr);
+        justify-items: center; /* Centraliza o conteúdo */
+    }
+}
+
+/* Estilos para telas maiores que 768px e menores que 1024px */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Estilos para telas maiores que 1024px */
+@media (min-width: 1025px) {
+    .container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+`;
+
+document.head.appendChild(style);

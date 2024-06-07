@@ -36,9 +36,11 @@ async function buscarAtletaPorId(id) {
 
 function montaCard(atleta) {
     const card = document.createElement('article');
+    card.className = 'card';
     card.style.cssText = `
         display: flex;
         flex-direction: row; /* Layout padrão em linha */
+        align-items: center; /* Centraliza os elementos verticalmente */
         background-color: black;
         padding: 0.5rem;
         margin: 0.5rem;
@@ -47,21 +49,19 @@ function montaCard(atleta) {
         gap: 1rem; /* Adiciona espaço entre imagem e detalhes */
         position: relative; /* Adiciona posição relativa para o posicionamento absoluto do botão */
     `;
+    
 
     const style = document.createElement('style');
     style.textContent = `
-        @media (max-width: 768px) {
-            article {
-                flex-direction: column; /* Layout em coluna para telas menores */
-                align-items: center;
-            }
-            .detalhes {
-                width: 100%; /* Largura total em telas menores */
+        @media (max-width: 767px) {
+            .card {
+                flex-direction: column !important;
                 align-items: center;
             }
         }
     `;
-    document.head.appendChild(style);
+document.head.appendChild(style);
+
 
     const divImagem = document.createElement('div');
     divImagem.style.cssText = `
@@ -92,44 +92,35 @@ function montaCard(atleta) {
 
     const divDetalhes = document.createElement('div');
     divDetalhes.className = 'detalhes';
-    divDetalhes.style.cssText = `
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start; /* Alinha à esquerda */
-        gap: 0.5rem;
-        width: 50%; /* Ajusta a largura */
-    `;
 
     const pDesc = document.createElement('p');
     pDesc.textContent = atleta.detalhes;
-    pDesc.style.cssText = pNome.style.cssText;
-
-    const divStats = document.createElement('div');
-    divStats.style.cssText = divDetalhes.style.cssText;
+    pDesc.style.cssText = `
+        color: #FFD700;
+        text-align: left;
+        margin: 0.5rem 0;
+    `;
 
     const pJogos = document.createElement('p');
     pJogos.textContent = `Jogos: ${atleta.n_jogos}`;
-    pJogos.style.cssText = pNome.style.cssText;
+    pJogos.style.cssText = pDesc.style.cssText;
 
     const pNascimento = document.createElement('p');
     pNascimento.textContent = `Nascimento: ${atleta.nascimento}`;
-    pNascimento.style.cssText = pNome.style.cssText;
+    pNascimento.style.cssText = pDesc.style.cssText;
 
     const pAltura = document.createElement('p');
     pAltura.textContent = `Altura: ${atleta.altura}`;
-    pAltura.style.cssText = pNome.style.cssText;
+    pAltura.style.cssText = pDesc.style.cssText;
 
     const pNaturalidade = document.createElement('p');
     pNaturalidade.textContent = `Naturalidade: ${atleta.naturalidade}`;
-    pNaturalidade.style.cssText = pNome.style.cssText;
+    pNaturalidade.style.cssText = pDesc.style.cssText;
 
     const bSair = document.createElement('button');
     bSair.textContent = 'Voltar';
     bSair.onclick = () => window.location.href = 'outra.html';
     bSair.style.cssText = `
-        position: absolute;
-        bottom: 5px; /* Distância do fundo */
-        right: 5px; /* Distância da direita */
         color: white;
         padding: 0.25rem 0.5rem; /* Ajusta o padding para um tamanho fixo menor */
         background-color: black;
@@ -137,8 +128,6 @@ function montaCard(atleta) {
         border: none;
         border-radius: 0.25rem;
         cursor: pointer;
-        width: 80px; /* Define uma largura fixa */
-        height: 30px; /* Define uma altura fixa */
         text-align: center;
     `;
 
@@ -154,13 +143,11 @@ function montaCard(atleta) {
     divImagem.appendChild(imagem);
     divImagem.appendChild(pNome);
 
-    divStats.appendChild(pJogos);
-    divStats.appendChild(pNascimento);
-    divStats.appendChild(pAltura);
-    divStats.appendChild(pNaturalidade);
-
     divDetalhes.appendChild(pDesc);
-    divDetalhes.appendChild(divStats);
+    divDetalhes.appendChild(pJogos);
+    divDetalhes.appendChild(pNascimento);
+    divDetalhes.appendChild(pAltura);
+    divDetalhes.appendChild(pNaturalidade);
 
     card.appendChild(divImagem);
     card.appendChild(divDetalhes);
