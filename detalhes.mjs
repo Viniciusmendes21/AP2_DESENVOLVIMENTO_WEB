@@ -118,6 +118,14 @@ function montaCard(atleta) {
         cursor: pointer;
     `;
 
+    bSair.addEventListener('mouseover', () => {
+        bSair.style.backgroundColor = 'black';
+    });
+    bSair.addEventListener('mouseout', () => {
+        bSair.style.backgroundColor = '#FFD700';
+    });
+
+
     divImagem.appendChild(imagem);
     divImagem.appendChild(pNome);
 
