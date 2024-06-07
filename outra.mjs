@@ -240,6 +240,7 @@ style.textContent = `
 @media (min-width: 769px) and (max-width: 1024px) {
     .container {
         grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
     }
 }
 
@@ -247,6 +248,7 @@ style.textContent = `
 @media (min-width: 1025px) {
     .container {
         grid-template-columns: repeat(4, 1fr);
+        justify-items: center;
     }
 }
 `;
