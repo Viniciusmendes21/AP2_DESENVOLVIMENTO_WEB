@@ -43,7 +43,6 @@ const handleClick = (evento) => {
 
     sessionStorage.setItem('atleta', JSON.stringify(dados));
 
-    const queryString = params.toString();
     const novaURL = `detalhes.html?id=${id}`;
 
     window.location.href = novaURL;
