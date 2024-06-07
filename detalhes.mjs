@@ -37,15 +37,31 @@ async function buscarAtletaPorId(id) {
 function montaCard(atleta) {
     const card = document.createElement('article');
     card.style.cssText = `
-        width: 15rem;
         display: flex;
-        flex-direction: column;
-        background-color: #FFD700;
+        flex-direction: row; /* Layout padrão em linha */
+        background-color: black;
         padding: 0.5rem;
         margin: 0.5rem;
-        text-align: center;
+        text-align: left; /* Ajusta para alinhamento à esquerda */
         box-sizing: border-box;
+        gap: 1rem; /* Adiciona espaço entre imagem e detalhes */
+        position: relative; /* Adiciona posição relativa para o posicionamento absoluto do botão */
     `;
+
+    const style = document.createElement('style');
+    style.textContent = `
+        @media (max-width: 768px) {
+            article {
+                flex-direction: column; /* Layout em coluna para telas menores */
+                align-items: center;
+            }
+            .detalhes {
+                width: 100%; /* Largura total em telas menores */
+                align-items: center;
+            }
+        }
+    `;
+    document.head.appendChild(style);
 
     const divImagem = document.createElement('div');
     divImagem.style.cssText = `
@@ -69,17 +85,19 @@ function montaCard(atleta) {
     pNome.textContent = atleta.nome;
     pNome.style.cssText = `
         font-weight: bold;
-        color: white;
+        color: #FFD700;
         text-align: center;
         margin: 0.5rem 0;
     `;
 
     const divDetalhes = document.createElement('div');
+    divDetalhes.className = 'detalhes';
     divDetalhes.style.cssText = `
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start; /* Alinha à esquerda */
         gap: 0.5rem;
+        width: 50%; /* Ajusta a largura */
     `;
 
     const pDesc = document.createElement('p');
@@ -106,25 +124,32 @@ function montaCard(atleta) {
     pNaturalidade.style.cssText = pNome.style.cssText;
 
     const bSair = document.createElement('button');
-    bSair.textContent = 'Sair';
+    bSair.textContent = 'Voltar';
     bSair.onclick = () => window.location.href = 'outra.html';
     bSair.style.cssText = `
+        position: absolute;
+        bottom: 5px; /* Distância do fundo */
+        right: 5px; /* Distância da direita */
         color: white;
-        margin-top: 0.5rem;
-        padding: 0.5rem;
-        background-color: #FFD700;
+        padding: 0.25rem 0.5rem; /* Ajusta o padding para um tamanho fixo menor */
+        background-color: black;
+        color: #FFD700;
         border: none;
         border-radius: 0.25rem;
         cursor: pointer;
+        width: 80px; /* Define uma largura fixa */
+        height: 30px; /* Define uma altura fixa */
+        text-align: center;
     `;
 
     bSair.addEventListener('mouseover', () => {
-        bSair.style.backgroundColor = 'black';
+        bSair.style.backgroundColor = '#FFD700';
+        bSair.style.color = 'black';
     });
     bSair.addEventListener('mouseout', () => {
-        bSair.style.backgroundColor = '#FFD700';
+        bSair.style.backgroundColor = 'black';
+        bSair.style.color = '#FFD700';
     });
-
 
     divImagem.appendChild(imagem);
     divImagem.appendChild(pNome);
