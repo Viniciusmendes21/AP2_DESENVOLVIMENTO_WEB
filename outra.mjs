@@ -43,6 +43,7 @@ const handleClick = (evento) => {
 
     sessionStorage.setItem('atleta', JSON.stringify(dados));
 
+    const queryString = params.toString();
     const novaURL = `detalhes.html?id=${id}`;
 
     window.location.href = novaURL;
@@ -71,7 +72,7 @@ const montaCard = (entrada) => {
     card.dataset.urlDetalhes = entrada.url_detalhes;
     card.dataset.elenco = entrada.elenco;
     card.dataset.imagem = entrada.imagem;
-    card.dataset.nJogos = entrada.n_jogos;
+    card.dataset.n_jogos = entrada.n_jogos;
     card.dataset.nome = entrada.nome;
     card.dataset.posicao = entrada.posicao;
     card.dataset.naturalidade = entrada.naturalidade;
