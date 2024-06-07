@@ -13,12 +13,16 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     if (!atleta || atleta.id !== id) {
         atleta = await buscarAtletaPorId(id);
+        if (!atleta || atleta === `Não há atleta com o id ${id}.`) {
+            exibirAtletaNaoEncontrado();
+            return;
+        }
     }
 
     if (atleta) {
         document.body.appendChild(montaCard(atleta));
     } else {
-        alert('Atleta não encontrado!');
+        exibirAtletaNaoEncontrado();
     }
 });
 
@@ -50,7 +54,6 @@ function montaCard(atleta) {
         position: relative; /* Adiciona posição relativa para o posicionamento absoluto do botão */
     `;
     
-
     const style = document.createElement('style');
     style.textContent = `
         @media (max-width: 767px) {
@@ -60,8 +63,7 @@ function montaCard(atleta) {
             }
         }
     `;
-document.head.appendChild(style);
-
+    document.head.appendChild(style);
 
     const divImagem = document.createElement('div');
     divImagem.style.cssText = `
@@ -154,4 +156,41 @@ document.head.appendChild(style);
     card.appendChild(bSair);
 
     return card;
+}
+
+function exibirAtletaNaoEncontrado() {
+    // Remove todos os elementos do body
+    document.body.innerHTML = '';
+
+    const div = document.createElement('div');
+    div.textContent = 'Atleta não encontrado';
+    div.style.color = '#FFD700';
+    div.style.textAlign = 'center';
+    div.style.marginTop = '1rem';
+    document.body.appendChild(div);
+
+    const bVoltar = document.createElement('button');
+    bVoltar.textContent = 'Voltar';
+    bVoltar.onclick = () => window.location.href = 'outra.html';
+    bVoltar.style.cssText = `
+        display: block;
+        margin: 1rem auto;
+        padding: 0.5rem 1rem;
+        background-color: #FFD700;
+        color: black;
+        border: none;
+        border-radius: 0.25rem;
+        cursor: pointer;
+    `;
+
+    bVoltar.addEventListener('mouseover', () => {
+        bVoltar.style.backgroundColor = 'black';
+        bVoltar.style.color = '#FFD700';
+    });
+    bVoltar.addEventListener('mouseout', () => {
+        bVoltar.style.backgroundColor = '#FFD700';
+        bVoltar.style.color = 'black';
+    });
+
+    document.body.appendChild(bVoltar);
 }
