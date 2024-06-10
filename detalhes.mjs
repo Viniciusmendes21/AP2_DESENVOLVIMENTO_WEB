@@ -159,7 +159,6 @@ function montaCard(atleta) {
 }
 
 function exibirAtletaNaoEncontrado() {
-    // Remove todos os elementos do body
     document.body.innerHTML = '';
 
     const div = document.createElement('div');

@@ -67,7 +67,6 @@ const montaCard = (entrada) => {
     border-radius:0.5rem;
     `;
 
-    // Adicionando dataset aos cards
     card.dataset.id = entrada.id;
     card.dataset.urlDetalhes = entrada.url_detalhes;
     card.dataset.elenco = entrada.elenco;
@@ -215,7 +214,7 @@ selectElenco.onchange = (evento) => {
     }
 };
 
-// CSS para diferentes tamanhos de tela usando @media
+
 const style = document.createElement('style');
 style.textContent = `
 .container {
@@ -228,7 +227,7 @@ style.textContent = `
     box-sizing: border-box;
 }
 
-/* Estilos para telas menores que 768px */
+
 @media (max-width: 768px) {
     .container {
         grid-template-columns: repeat(1, 1fr);
@@ -236,7 +235,7 @@ style.textContent = `
     }
 }
 
-/* Estilos para telas maiores que 768px e menores que 1024px */
+
 @media (min-width: 769px) and (max-width: 1024px) {
     .container {
         grid-template-columns: repeat(2, 1fr);
@@ -244,7 +243,7 @@ style.textContent = `
     }
 }
 
-/* Estilos para telas maiores que 1024px */
+
 @media (min-width: 1025px) {
     .container {
         grid-template-columns: repeat(4, 1fr);
