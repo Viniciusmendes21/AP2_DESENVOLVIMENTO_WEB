@@ -43,15 +43,15 @@ function montaCard(atleta) {
     card.className = 'card';
     card.style.cssText = `
         display: flex;
-        flex-direction: row; /* Layout padrão em linha */
-        align-items: center; /* Centraliza os elementos verticalmente */
+        flex-direction: row;
+        align-items: center;
         background-color: black;
         padding: 0.5rem;
         margin: 0.5rem;
-        text-align: left; /* Ajusta para alinhamento à esquerda */
+        text-align: left;
         box-sizing: border-box;
-        gap: 1rem; /* Adiciona espaço entre imagem e detalhes */
-        position: relative; /* Adiciona posição relativa para o posicionamento absoluto do botão */
+        gap: 1rem;
+        position: relative;
     `;
     
     const style = document.createElement('style');
@@ -124,7 +124,7 @@ function montaCard(atleta) {
     bSair.onclick = () => window.location.href = 'outra.html';
     bSair.style.cssText = `
         color: white;
-        padding: 0.25rem 0.5rem; /* Ajusta o padding para um tamanho fixo menor */
+        padding: 0.25rem 0.5rem;
         background-color: black;
         color: #FFD700;
         border: none;

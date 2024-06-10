@@ -231,7 +231,7 @@ style.textContent = `
 @media (max-width: 768px) {
     .container {
         grid-template-columns: repeat(1, 1fr);
-        justify-items: center; /* Centraliza o conteúdo */
+        justify-items: center;
     }
 }
 
