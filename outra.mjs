@@ -8,17 +8,12 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 const divPesquisa = document.createElement('div');
-divPesquisa.style.textAlign = 'center';
+divPesquisa.classList.add('divPesquisa');
 
 const inputPesquisa = document.createElement('input');
 inputPesquisa.type = 'text';
 inputPesquisa.placeholder = 'BUSQUE POR NOME';
-inputPesquisa.style.textAlign = 'center';
-inputPesquisa.style.lineHeight = '3em';
-inputPesquisa.style.maxWidth = '80%';
-inputPesquisa.style.width = '30em';
-inputPesquisa.style.borderRadius = '0.5rem';
-inputPesquisa.style.border = 'none';
+inputPesquisa.classList.add('inputPesquisa');
 
 divPesquisa.appendChild(inputPesquisa);
 document.body.appendChild(divPesquisa);
@@ -50,22 +45,7 @@ const handleClick = (evento) => {
 
 const montaCard = (entrada) => {
     const card = document.createElement('article');
-    card.style.cssText = `
-    width: 15rem;
-    display: grid;
-    grid-template-areas:
-    "image"
-    "span"
-    "name";
-    background-color: #FFD700;
-    padding: .5rem;
-    margin: .5rem;
-    text-align: center;
-    box-sizing: border-box;
-    cursor: pointer;
-    max-width: 1200px;
-    border-radius:0.5rem;
-    `;
+    card.classList.add('card');
 
     card.dataset.id = entrada.id;
     card.dataset.urlDetalhes = entrada.url_detalhes;
@@ -83,47 +63,26 @@ const montaCard = (entrada) => {
     card.onclick = handleClick;
 
     const divImagem = document.createElement('div');
-    divImagem.style.gridArea = 'image';
-    divImagem.style.display = 'flex';
-    divImagem.style.alignItems = 'center';
-    divImagem.style.justifyContent = 'center';
+    divImagem.classList.add('divImagem');
 
     const imagem = document.createElement('img');
     imagem.src = entrada.imagem;
     imagem.alt = `Foto de ${entrada.imagem}`;
-    imagem.style.width = '100%';
-    imagem.style.height = 'auto';
-    imagem.style.objectFit = 'cover';
-    imagem.style.borderRadius = '0.5rem';
+    imagem.classList.add('imagem');
 
     const pNome = document.createElement('p');
     pNome.className = 'nome';
     pNome.innerHTML = `${entrada.nome}`;
-    pNome.style.gridArea = 'name';
-    pNome.style.textAlign = 'center';
-    pNome.style.textTransform = 'uppercase';
-    pNome.style.fontWeight = 'bold';
-    pNome.style.margin = '0.5rem 0';
-    pNome.style.color = 'white';
+    pNome.classList.add('nome');
+
 
     const divSpan = document.createElement('div');
-    divSpan.style.gridArea = 'span';
-    divSpan.style.display = 'flex';
-    divSpan.style.alignItems = 'center';
-    divSpan.style.justifyContent = 'center';
-    divSpan.style.height = '3rem';
+    divSpan.classList.add('divSpan');
+
 
     const spanSaibaMais = document.createElement('span');
     spanSaibaMais.innerHTML = 'Saiba mais';
-    spanSaibaMais.style.backgroundColor = 'black';
-    spanSaibaMais.style.color = 'white';
-    spanSaibaMais.style.padding = '0.5rem';
-    spanSaibaMais.style.display = 'inline-block';
-    spanSaibaMais.style.width = '100%';
-    spanSaibaMais.style.fontWeight = 'bold';
-    spanSaibaMais.style.textAlign = 'center';
-    spanSaibaMais.style.boxSizing = 'border-box';
-    spanSaibaMais.style.borderRadius = '0.5rem';
+    spanSaibaMais.classList.add('spanSaibaMais');
     divImagem.appendChild(imagem);
     card.appendChild(divImagem);
     card.appendChild(pNome);
@@ -215,41 +174,3 @@ selectElenco.onchange = (evento) => {
 };
 
 
-const style = document.createElement('style');
-style.textContent = `
-.container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-    gap: 1rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
-    box-sizing: border-box;
-}
-
-
-@media (max-width: 768px) {
-    .container {
-        grid-template-columns: repeat(1, 1fr);
-        justify-items: center;
-    }
-}
-
-
-@media (min-width: 769px) and (max-width: 1024px) {
-    .container {
-        grid-template-columns: repeat(2, 1fr);
-        justify-items: center;
-    }
-}
-
-
-@media (min-width: 1025px) {
-    .container {
-        grid-template-columns: repeat(4, 1fr);
-        justify-items: center;
-    }
-}
-`;
-
-document.head.appendChild(style);
