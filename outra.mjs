@@ -20,7 +20,6 @@ document.body.appendChild(divPesquisa);
 
 const container = document.createElement('div');
 container.className ='container';
-container.style.gap = '1rem';
 
 document.body.appendChild(container);
 
