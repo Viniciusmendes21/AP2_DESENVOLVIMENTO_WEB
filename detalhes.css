@@ -1,0 +1,125 @@
+@keyframes blink {
+    0%{
+      opacity: 1;
+    }
+    100%{
+      opacity: 0;
+    }
+  }
+  
+  body {
+    background-color: darkgray;
+  }
+
+button {
+    background-color: #FFD700;
+    color: black;
+    font-family: 'Neuton', serif;
+    cursor: pointer;
+    padding: 0.5em 1em;
+    font-size: 1.3em;
+    text-align: center;
+    border-radius:0.5rem;
+    border: none;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: red;
+    color: white;
+    font-weight: bold;
+}
+
+p,a {
+    font-family: 'Neuton', serif;
+}
+
+h1,h2,h3,h4,h5,h6{
+    font-family: 'Alumni Sans Inline One', sans-serif;
+    font-weight: normal;
+}
+
+.card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: black;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    text-align: left;
+    box-sizing: border-box;
+    gap: 1rem;
+    position: relative;
+}
+
+.divImagem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.imagem {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 0.5rem;
+}
+
+.nome {
+    font-weight: bold;
+    color: #FFD700;
+    text-align: center;
+    margin: 0.5rem 0;
+}
+
+.desc, .jogos, .nascimento, .altura, .naturalidade {
+    color: #FFD700;
+    text-align: left;
+    margin: 0.5rem 0;
+}
+
+.bSair {
+    color: #FFD700;
+    padding: 0.25rem 0.5rem;
+    background-color: black;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    text-align: center;
+}
+
+.bSair:hover {
+    background-color: #FFD700;
+    color: black;
+}
+
+.naoEncontrado {
+    color: #FFD700;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.bVoltar {
+    display: block;
+    margin: 1rem auto;
+    padding: 0.5rem 1rem;
+    background-color: #FFD700;
+    color: black;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+}
+
+.bVoltar:hover {
+    background-color: black;
+    color: #FFD700;
+}
+
+
+@media (max-width: 767px) {
+    .card {
+        flex-direction: column !important;
+        align-items: center;
+    }
+}
