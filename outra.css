@@ -189,6 +189,13 @@ h1,h2,h3,h4,h5,h6{
   box-sizing: border-box;
 }
 
+.container.flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+
 
 @media (max-width: 767px) {
   .container {

@@ -102,11 +102,20 @@ inputPesquisa.onkeyup = (ev) => {
 
         container.innerHTML = '';
 
+        if (filtrado.length > 0) {
+            container.classList.add('flex');
+        } else {
+            container.classList.remove('flex');
+        }
+
         filtrado.forEach((atleta) => {
             container.appendChild(montaCard(atleta));
         });
+    } else {
+        container.classList.remove('flex');
     }
 };
+
 
 const pegaDados = async (caminho) => {
     const resposta = await fetch(caminho);
