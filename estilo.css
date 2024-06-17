@@ -8,7 +8,11 @@
 }
 
 body {
-  background-color: darkgray;
+  background-image: url('fundo2.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 
 #senha {
@@ -45,15 +49,18 @@ button:hover {
 #texto-logar {
   font-family: 'Alumni Sans Inline One', sans-serif;
   font-weight: bold;
+  color: #FFD700;
 }
 
 p,a {
   font-family: 'Neuton', serif;
+  color: #FFD700;
 }
 
 h1,h2,h3,h4,h5,h6{
   font-family: 'Alumni Sans Inline One', sans-serif;
   font-weight: normal;
+  color: #FFD700;
 }
 
 @media only screen and (max-width: 767px) {
