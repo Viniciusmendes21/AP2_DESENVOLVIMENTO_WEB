@@ -11,7 +11,7 @@ const divPesquisa = document.createElement('div');
 divPesquisa.classList.add('divPesquisa');
 
 const inputPesquisa = document.createElement('input');
-inputPesquisa.type = 'text';
+inputPesquisa.type = 'search';
 inputPesquisa.placeholder = 'BUSQUE POR NOME';
 inputPesquisa.classList.add('inputPesquisa');
 
